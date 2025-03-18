@@ -30,7 +30,8 @@ namespace BurtovCheckOut.Components.Pages
 			
 			if(App.db.User.ToList().Any(x => x.Login == LoginTb.Text && x.Password == PasswordTb.Text))
 			{
-
+				MessageBox.Show("Успешно");
+				App.CurrentUser = App.db.User.ToList().Where(x => x.Login == LoginTb.Text && x.Password == PasswordTb.Text).First();
 			}
         }
     }
